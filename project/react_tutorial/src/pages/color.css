@@ -1,0 +1,30 @@
+.purple{
+  color:#C5A5C5;
+}
+.pink{
+  color:#FC9292;
+}
+.bracket{
+  color:#88C6BE;
+}
+.green{
+  color:#8DC891;
+}
+.blue{
+  color:#79B6F2;
+}
+.yellow{
+  color:#FAC863;
+}
+.bgyellow{
+  background-color:yellow;
+}
+.bgblue{
+  background-color:skyblue;
+}
+.bggreen{
+  background-color:greenyellow;
+}
+img{
+  width:500px;
+}
