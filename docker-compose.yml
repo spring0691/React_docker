@@ -1,10 +1,10 @@
 services:
-  react:
+  react_default:
     volumes:
         "paste project volume path here"
     build: .
     image: react:node16
-    container_name: react-node16
+    container_name: react_default
     ports:
         - "3000:3000"
     environment:
