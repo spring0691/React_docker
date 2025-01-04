@@ -7,7 +7,7 @@ node:16.20.2-slim
 
 # How to install
 1.Git clone this project  
-2.Command ```bash print_volumes.sh react_app 8```   
+2.Command ```bash print_volumes.sh project/react_default 8```   
 3.Copy path and paste to docker-compose.yml  
 4.Command ```docker compose up --build```  
 5.Check the react page loads http://localhost:3000/  
