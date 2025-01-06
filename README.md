@@ -51,7 +51,7 @@ docker compose up -d --build
 ```  
 
 # How to use  
-- Start app
+- Start app  
   1 terminal = 1 react app
  ```
  docker exec react_projects sh -c "cd /projects/react_default && PORT=3001 WATCHPACK_POLLING=true npm start &"
