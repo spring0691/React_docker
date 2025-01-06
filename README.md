@@ -53,7 +53,7 @@ docker compose up -d --build
 # How to use  
 - Start app  
  ```
- docker exec react_projects sh -c "cd /projects/react_default && nohup PORT=3001 npm start"
+ docker exec react_projects sh -c "cd /projects/react_default && PORT=3001 nohup npm start"
  ```   
  Check http://localhost:3001/ and Command ```Crtl + c ```  return to terminal 
 - Stop app  
