@@ -8,8 +8,11 @@ node:16.20.2-slim
 
 # How to install
 1.Git clone this project  
-2.Place development project under the "project" directory(Not including node_modules)  
-3.Command ```bash print_docker-compose-scripts.sh project 8```   
+2.Place development project under the "projects" directory(Not including node_modules)  
+3.Command 
+```
+bash print_docker-compose-scripts.sh project 8
+```   
 4.Write "volumes" in docker-compose.yml  
 ```
 ex)
@@ -27,7 +30,10 @@ services:
         - ./project/react_tutorial/public:/projects/react_tutorial/public
         - ./project/react_tutorial/src:/projects/react_tutorial/src
 ```   
-5.Command ```bash print_Dockerfile_scripts.sh project package.json,package-lock.json```  
+5.Command 
+```
+bash print_Dockerfile_scripts.sh project package.json,package-lock.json
+```  
 6.Write "COPY" and "RUN" in Dockfile  
 ```
 ex)
@@ -39,19 +45,35 @@ COPY ./project/react_tutorial/package-lock.json /projects/react_tutorial/package
 COPY ./project/react_tutorial/package.json /projects/react_tutorial/package.json
 RUN cd /projects/react_tutorial && npm install
 ```
-6.Command ```docker compose up -d --build```  
+6.Command 
+```
+docker compose up -d --build
+```  
 
 # How to use  
-- Start ap1p  
- ```docker exec react_projects sh -c "cd /projects/react_default && nohup PORT=3001 npm start" ```   
+- Start app  
+ ```
+ docker exec react_projects sh -c "cd /projects/react_default && nohup PORT=3001 npm start"
+ ```   
  Check http://localhost:3001/ and Command ```Crtl + c ```  return to terminal 
-- Stop ap1p  
-```docker exec -it react_projects /bin/bash ```  
-```lsof -i:3001 ``` <-- check PID  
-```kill 0000 ``` <-- PID number that React ap1p on port 3001
+- Stop app  
+```
+docker exec -it react_projects /bin/bash 
+```   
+```
+lsof -i:3001  //check PID
+```  
+```
+kill 0000 //PID number that React app on port 3001
+```
+
 - Start container  
-Container runs and waits for the react ap1p start command  
-```docker start react_projects```  
+Container runs and waits for the react app start command  
+```
+docker start react_projects
+```  
 - Stop container  
 All react projects running inside containers are down  
-```docker stop react_projects```  
+```
+docker stop react_projects
+```  
