@@ -11,7 +11,7 @@ node:16.20.2-slim
 2.Place development project under the "projects" directory(Not including node_modules)  
 3.Command 
 ```
-bash print_docker-compose-scripts.sh project 8
+bash print_docker-compose-scripts.sh projects 8
 ```   
 4.Write "volumes" in docker-compose.yml  
 ```
@@ -32,7 +32,7 @@ services:
 ```   
 5.Command 
 ```
-bash print_Dockerfile_scripts.sh project package.json,package-lock.json
+bash print_Dockerfile_scripts.sh projects package.json,package-lock.json
 ```  
 6.Write "COPY" and "RUN" in Dockfile  
 ```
