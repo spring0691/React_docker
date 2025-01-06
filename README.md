@@ -53,7 +53,7 @@ docker compose up -d --build
 # How to use  
 - Start app  
  ```
- docker exec react_projects sh -c "cd /projects/react_default && PORT=3001 WATCHPACK_POLLING=true npm start &"
+ docker exec react_projects sh -c "cd /projects/react_default && PORT=3001 WATCHPACK_POLLING=true npm start"
  ```   
  Check http://localhost:3001/, and test hot reloading  
  Command ```ctrl + c``` and check "context canceled" message output 
