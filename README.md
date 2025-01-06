@@ -17,40 +17,40 @@ services:
   
   react_projects:
     volumes:
-        - ./project/react_default/package-lock.json:/app/react_default/package-lock.json
-        - ./project/react_default/package.json:/app/react_default/package.json
-        - ./project/react_default/public:/app/react_default/public
-        - ./project/react_default/src:/app/react_default/src
+        - ./project/react_default/package-lock.json:/projects/react_default/package-lock.json
+        - ./project/react_default/package.json:/projects/react_default/package.json
+        - ./project/react_default/public:/projects/react_default/public
+        - ./project/react_default/src:/projects/react_default/src
 
-        - ./project/react_tutorial/package-lock.json:/app/react_tutorial/package-lock.json
-        - ./project/react_tutorial/package.json:/app/react_tutorial/package.json
-        - ./project/react_tutorial/public:/app/react_tutorial/public
-        - ./project/react_tutorial/src:/app/react_tutorial/src
+        - ./project/react_tutorial/package-lock.json:/projects/react_tutorial/package-lock.json
+        - ./project/react_tutorial/package.json:/projects/react_tutorial/package.json
+        - ./project/react_tutorial/public:/projects/react_tutorial/public
+        - ./project/react_tutorial/src:/projects/react_tutorial/src
 ```   
 5.Command ```bash print_Dockerfile_scripts.sh project package.json,package-lock.json```  
 6.Write "COPY" and "RUN" in Dockfile  
 ```
 ex)
-COPY ./project/react_default/package-lock.json /app/react_default/package-lock.json
-COPY ./project/react_default/package.json /app/react_default/package.json
-RUN cd /app/react_default && npm install
+COPY ./project/react_default/package-lock.json /projects/react_default/package-lock.json
+COPY ./project/react_default/package.json /projects/react_default/package.json
+RUN cd /projects/react_default && npm install
 
-COPY ./project/react_tutorial/package-lock.json /app/react_tutorial/package-lock.json
-COPY ./project/react_tutorial/package.json /app/react_tutorial/package.json
-RUN cd /app/react_tutorial && npm install
+COPY ./project/react_tutorial/package-lock.json /projects/react_tutorial/package-lock.json
+COPY ./project/react_tutorial/package.json /projects/react_tutorial/package.json
+RUN cd /projects/react_tutorial && npm install
 ```
 6.Command ```docker compose up -d --build```  
 
 # How to use  
-- Start app  
- ```docker exec react_projects sh -c "cd /app/react_default && nohup PORT=3001 npm start" ```   
+- Start ap1p  
+ ```docker exec react_projects sh -c "cd /projects/react_default && nohup PORT=3001 npm start" ```   
  Check http://localhost:3001/ and Command ```Crtl + c ```  return to terminal 
-- Stop app  
+- Stop ap1p  
 ```docker exec -it react_projects /bin/bash ```  
 ```lsof -i:3001 ``` <-- check PID  
-```kill 0000 ``` <-- PID number that React app on port 3001
+```kill 0000 ``` <-- PID number that React ap1p on port 3001
 - Start container  
-Container runs and waits for the react app start command  
+Container runs and waits for the react ap1p start command  
 ```docker start react_projects```  
 - Stop container  
 All react projects running inside containers are down  
