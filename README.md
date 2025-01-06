@@ -52,14 +52,20 @@ docker compose up -d --build
 
 # How to use  
 - Start app  
-  1 terminal = 1 react app
  ```
  docker exec react_projects sh -c "cd /projects/react_default && PORT=3001 WATCHPACK_POLLING=true npm start &"
  ```   
- Check http://localhost:3001/
+ Check http://localhost:3001/, and test hot reloading  
+ Command ```ctrl + c``` and check "context canceled" message output 
 - Stop app  
 ```
-Ctrl + c
+docker exec -it react_projects /bin/bash 
+```   
+```
+lsof -i:3001  //check PID
+```  
+```
+kill 0000 //PID number that React app on port 3001
 ```
 - Start container  
 Container runs and waits for the react app start command  
