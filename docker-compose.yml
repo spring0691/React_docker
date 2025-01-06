@@ -1,12 +1,15 @@
 services:
-  react_default:
+  
+  react_projects:
     volumes:
-        "paste project volume path here"
+        "print_docker_compose.sh text is here"
     build: .
     image: react:node16
-    container_name: react_default
+    container_name: react_projects
     ports:
         - "3000:3000"
+        - "3001:3001"
+        - "3002:3002"
     environment:
         - CHOKIDAR_USEPOLLING=true
-    command: sh -c "npm install && npm start"
+    command: sh -c "tail -f /dev/null"
