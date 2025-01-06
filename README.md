@@ -51,22 +51,16 @@ docker compose up -d --build
 ```  
 
 # How to use  
-- Start app  
+- Start app
+  1 terminal = 1 react app
  ```
- docker exec react_projects sh -c "cd /projects/react_default && PORT=3001 nohup npm start"
+ docker exec react_projects sh -c "cd /projects/react_default && PORT=3001 WATCHPACK_POLLING=true npm start &"
  ```   
- Check http://localhost:3001/ and Command ```Crtl + c ```  return to terminal 
+ Check http://localhost:3001/
 - Stop app  
 ```
-docker exec -it react_projects /bin/bash 
-```   
+Ctrl + c
 ```
-lsof -i:3001  //check PID
-```  
-```
-kill 0000 //PID number that React app on port 3001
-```
-
 - Start container  
 Container runs and waits for the react app start command  
 ```
