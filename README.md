@@ -11,7 +11,7 @@ node:16.20.2-slim
 2.Place development project under the "projects" directory(Not including node_modules)  
 3.Command 
 ```
-bash print_docker_compose.sh projects 8
+bash print_docker-compose.sh projects 8
 ```   
 4.Write "volumes" in docker-compose.yml  
 ```
